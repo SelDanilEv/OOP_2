@@ -97,15 +97,19 @@ namespace Lab1
 
 
             fileSystem.Print();
-
             Console.Read();
 
 
-            Component FindComponent = fileSystem.Find("Диск С");
+            Component FindComponent = fileSystem.StartFind("readme.txt");
             if (FindComponent != null)
+            {
+                Console.WriteLine("Finding readme.txt");
                 FindComponent.Print();
-
+            }
             Console.ReadKey();
+
+            //---------------------------------------------------
+
         }
     }
 

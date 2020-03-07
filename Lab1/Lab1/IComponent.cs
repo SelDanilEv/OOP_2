@@ -11,6 +11,8 @@ namespace Lab1
     {
         protected string name;
 
+        protected Component findComponent;
+
         public Component(string name)
         {
             this.name = name;
@@ -26,6 +28,8 @@ namespace Lab1
         {
             Console.WriteLine(name);
         }
+
+        public virtual Component StartFind(string name) { return null; }
 
         public virtual Component Find(string name)
         {
@@ -64,7 +68,12 @@ namespace Lab1
             return size;
         }
 
-        static Component rc = null;
+        public override Component StartFind(string name)
+        {
+            findComponent = null;
+            findComponent = Find(name);
+            return findComponent;
+        }
 
         public override Component Find(string name)
         {
@@ -72,15 +81,14 @@ namespace Lab1
             {
                 if (components[i].Find(name) != null)
                 {
-                    rc = components[i];
+                    findComponent = components[i];
                 }
             }
 
             if (name == this.name)
-                rc = this;
+                findComponent = this;
             
-
-            return rc;
+            return findComponent;
         }
 
         public override void Print()
