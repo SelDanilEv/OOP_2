@@ -24,7 +24,7 @@ namespace Lab1
 
             Helicopter firstHelicopter = new Helicopter();
 
-            IMovableToward AdaptedHelicopter = new HelicopterToGroundUnitAdapter(firstHelicopter);
+            IMovableToward AdaptedHelicopter = (HelicopterToGroundUnitAdapter)firstHelicopter;
 
             foreach (IMilitaryUnit unit in tanks)
             {

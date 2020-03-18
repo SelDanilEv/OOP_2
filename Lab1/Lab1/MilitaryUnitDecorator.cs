@@ -12,7 +12,7 @@ namespace Lab1
         {
         }
 
-        public override void GetDescription()
+        public void GetDescription()
         {
             Console.WriteLine(base.ToString());
         }
@@ -24,7 +24,7 @@ namespace Lab1
         {
         }
 
-        public override void GetDescription()
+        public void GetDescription()
         {
             Console.WriteLine(base.ToString());
         }
@@ -37,7 +37,7 @@ namespace Lab1
 
         }
 
-        public override void GetDescription()
+        public void GetDescription()
         {
             Console.WriteLine(base.ToString());
         }

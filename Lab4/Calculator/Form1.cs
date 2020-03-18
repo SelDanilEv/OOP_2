@@ -14,13 +14,13 @@ namespace Calculator
 
     public partial class Form1 : Form
     {
-        float a, b;
+        float a =0, b=0;
         int CalcOperator;
         bool sign = true;
 
         public void takeOperator(int oper)
         {
-            a = float.Parse(textBox1.Text);
+            float.TryParse(textBox1.Text,out a);
             textBox1.Clear();
             CalcOperator = oper;
             switch (oper)

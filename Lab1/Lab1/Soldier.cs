@@ -12,7 +12,7 @@ namespace Lab1
         private static int counter = 0;
         string weapon;
 
-        public override void GetDescription()
+        public void GetDescription()
         {
             Console.WriteLine("I am soldier " + number);
         }

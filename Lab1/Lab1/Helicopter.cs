@@ -11,7 +11,7 @@ namespace Lab1
         private int number;
         private static int counter = 0;
 
-        public override void GetDescription()
+        public void GetDescription()
         {
             Console.WriteLine("I am helicopter " + number);
         }

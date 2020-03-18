@@ -22,7 +22,7 @@ namespace Lab1
             return "Tank " + number;
         }
 
-        public override void GetDescription()
+        public void GetDescription()
         {
             Console.WriteLine("I am tank " + number);
         }

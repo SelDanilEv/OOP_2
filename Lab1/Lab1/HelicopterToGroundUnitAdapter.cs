@@ -14,7 +14,7 @@ namespace Lab1
             helicopter = hel;
         }
 
-        public override void GetDescription()
+        public void GetDescription()
         {
             throw new NotImplementedException();
         }

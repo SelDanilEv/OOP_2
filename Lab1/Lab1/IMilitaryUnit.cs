@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace Lab1
 {
-    abstract class IMilitaryUnit
+    interface IMilitaryUnit
     {
-        abstract public void GetDescription();
+       void GetDescription();
     }
 }
