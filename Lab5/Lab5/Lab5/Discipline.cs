@@ -70,6 +70,7 @@ namespace Lab5
                     "Course :" + course + "\n" +
                     "Semester :" + semester + "\n" +
                     "Specialty :" + specialty + "\n" +
+                    "Type of control:" + typeOfControl + "\n" +
                     "Lectures :" + quantityOfLectures + "\n" +
                     "Labs :" + quantityOfLabs + "\n";
             else
@@ -77,6 +78,7 @@ namespace Lab5
                 "Course :" + course + "\n" +
                 "Semester :" + semester + "\n" +
                 "Specialty :" + specialty + "\n" +
+                "Type of control:" + typeOfControl + "\n" +
                 "Lectures :" + quantityOfLectures + "\n" +
                 "Labs :" + quantityOfLabs + "\n" +
                 "Lector name :" + DLector.FullName + "\n" +
