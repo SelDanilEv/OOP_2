@@ -1,0 +1,51 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:Lab7_8.Style">
+    <ControlTemplate x:Key="CircButtons">
+        <Border CornerRadius="25" Width="100" Height="100" BorderBrush="DarkGray" BorderThickness="4">
+            <ContentControl HorizontalAlignment="Center" VerticalAlignment="Center" Content="Delete" Background="LawnGreen"></ContentControl>
+        </Border>
+    </ControlTemplate>
+    <Style TargetType="Button">
+        <Setter Property="Background" Value="LawnGreen" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="Opacity" Value="10" />
+        <Style.Triggers>
+            <EventTrigger RoutedEvent="MouseEnter">
+                <BeginStoryboard>
+                    <Storyboard>
+                        <ThicknessAnimation Duration="0:0:0.5" Storyboard.TargetProperty="BorderThickness" To="5"></ThicknessAnimation>
+                    </Storyboard>
+                </BeginStoryboard>
+            </EventTrigger>
+            <EventTrigger RoutedEvent="MouseLeave">
+                <BeginStoryboard>
+                    <Storyboard>
+                        <ThicknessAnimation Duration="0:0:2" Storyboard.TargetProperty="BorderThickness" To="1"/>
+                    </Storyboard>
+                </BeginStoryboard>
+            </EventTrigger>
+        </Style.Triggers>
+    </Style>
+    <Style TargetType="ListView">
+        <Setter Property="Background" Value="LightSeaGreen" />
+        <Setter Property="Foreground" Value="Purple" />
+    </Style>
+    <Style TargetType="Grid">
+        <Setter Property="Background" Value="PaleGreen" />
+    </Style>
+    <Style TargetType="TextBox">
+        <Setter Property="Background" Value="LightGreen" />
+        <Style.Triggers>
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="IsFocused" Value="True" />
+                    <Condition Property="Text" Value="WOW" />
+                </MultiTrigger.Conditions>
+                <MultiTrigger.Setters>
+                    <Setter Property="Background" Value="IndianRed"/>
+                </MultiTrigger.Setters>
+            </MultiTrigger>
+        </Style.Triggers>
+    </Style>
+</ResourceDictionary>

@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1062
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab7-8", "Lab7-8\Lab7-8.csproj", "{CC578DE5-1DBA-4E86-A98E-B4F55547F79A}"
+	ProjectSection(ProjectDependencies) = postProject
+		{93524681-11A3-43B5-91C2-9942CFFFA245} = {93524681-11A3-43B5-91C2-9942CFFFA245}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfCustomControlLibrary1", "WpfCustomControlLibrary1\WpfCustomControlLibrary1.csproj", "{93524681-11A3-43B5-91C2-9942CFFFA245}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CC578DE5-1DBA-4E86-A98E-B4F55547F79A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC578DE5-1DBA-4E86-A98E-B4F55547F79A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC578DE5-1DBA-4E86-A98E-B4F55547F79A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC578DE5-1DBA-4E86-A98E-B4F55547F79A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{93524681-11A3-43B5-91C2-9942CFFFA245}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93524681-11A3-43B5-91C2-9942CFFFA245}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93524681-11A3-43B5-91C2-9942CFFFA245}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93524681-11A3-43B5-91C2-9942CFFFA245}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8A67EDE6-692F-48B7-87E3-C08C15968B72}
+	EndGlobalSection
+EndGlobal

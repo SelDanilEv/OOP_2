@@ -6,6 +6,23 @@ using System.Text.RegularExpressions;
 
 namespace Lab5
 {
+    [AttributeUsage(AttributeTargets.Property, AllowMultiple = false, Inherited = false)]
+    public class MyAtr : ValidationAttribute
+    {
+        public override bool IsValid(object value)
+        {
+            var inputValue = value as string;
+            var isValid = true;
+
+            if (!string.IsNullOrEmpty(inputValue))
+            {
+                isValid = inputValue != "GG";
+            }
+            return isValid;
+        }
+    }
+
+
     public partial class Form2 : Form
     {
         public Form2(List<Discipline> disciplines)
@@ -14,7 +31,8 @@ namespace Lab5
             list = new List<Discipline>(disciplines);
         }
 
-        string Lector;
+        [MyAtr(ErrorMessage = "Lector not GG")]
+        public string Lector { get; set; }
         [Range(1, 2, ErrorMessage = "Semester error")]
         public int semester { get; set; }
         int course;
@@ -67,6 +85,7 @@ namespace Lab5
             }
             this.richTextBoxResult.Text = String.Empty;
 
+
             var results = new List<ValidationResult>();
             var context = new ValidationContext(this);
             if (!Validator.TryValidateObject(this, context, results, true))
@@ -76,6 +95,7 @@ namespace Lab5
                     MessageBox.Show(error.ErrorMessage);
                 }
             }
+
 
             if (!valid)
                 this.richTextBoxResult.Text = "Regular expression error";
