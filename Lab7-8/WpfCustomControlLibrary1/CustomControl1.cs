@@ -1,3 +1,5 @@
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
@@ -32,12 +34,20 @@ namespace WpfCustomControlLibrary1
     ///     <MyNamespace:CustomControl1/>
     ///
     /// </summary>
-    public partial class ControlLibrary1 : UserControl
+    public partial class ControlLibrary1 : UserControl, INotifyPropertyChanged
     {
         public static DependencyProperty ColorProperty;
         public static DependencyProperty RedProperty;
         public static DependencyProperty GreenProperty;
         public static DependencyProperty BlueProperty;
+
+        protected virtual void NotifyPropertyChanged([CallerMemberName] string propertyName = "")
+        {
+            this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
 
         static ControlLibrary1()
         {
@@ -53,11 +63,11 @@ namespace WpfCustomControlLibrary1
             ColorChangedEvent = EventManager.RegisterRoutedEvent("ColorChanged", RoutingStrategy.Bubble,
         typeof(RoutedPropertyChangedEventHandler<Color>), typeof(ControlLibrary1));
         }
+
         public Color Color
         {
-            get => (Color)this.GetValue(ColorProperty);
-
-            set => this.SetValue(ColorProperty, value);
+            get {return (Color)this.GetValue(ColorProperty); }
+            set { this.SetValue(ColorProperty, value); CodeColor = this.Color.ToString(); }
         }
         public byte Red
         {
@@ -74,6 +84,14 @@ namespace WpfCustomControlLibrary1
             get => (byte)this.GetValue(BlueProperty);
             set => this.SetValue(BlueProperty, value);
         }
+
+        private string _code = "CODE";
+        public string CodeColor
+        {
+            get { return _code; }
+            set { _code = value; NotifyPropertyChanged(""); }
+        }
+
         private static void OnColorRGBChanged(DependencyObject sender,
             DependencyPropertyChangedEventArgs e)
         {
@@ -85,7 +103,6 @@ namespace WpfCustomControlLibrary1
                 color.G = (byte)e.NewValue;
             else if (e.Property == BlueProperty)
                 color.B = (byte)e.NewValue;
-
             ControlLibrary1.Color = color;
         }
         private static void OnColorChanged(DependencyObject sender,
@@ -100,7 +117,7 @@ namespace WpfCustomControlLibrary1
         public static readonly RoutedEvent ColorChangedEvent;
         public event RoutedPropertyChangedEventHandler<Color> ColorChanged
         {
-            add {}
+            add { }
             remove { this.RemoveHandler(ColorChangedEvent, value); }
         }
     }
