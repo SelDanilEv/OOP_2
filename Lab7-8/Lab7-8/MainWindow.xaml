@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Lab7_8"
         xmlns:vm ="clr-namespace:Lab7_8.ViewModel"
+        xmlns:commands ="clr-namespace:Lab7_8.ViewModel.Comands"
         xmlns:MyNamespace="clr-namespace:WpfCustomControlLibrary1;assembly=WpfCustomControlLibraryAss"
         mc:Ignorable="d"
         MinHeight="600"
@@ -13,9 +14,18 @@
         Cursor="Icon/cursor2.cur"
         Title="Task manager" Height="600" Width="1200" Foreground="Black">
     <!--<Window.CommandBindings>
-        <vm:ViewModel></vm:ViewModel>
+        <CommandBinding Command="local:MyCommands.Requery"
+                        Executed="CommandBinding_Executed"></CommandBinding>
     </Window.CommandBindings>-->
-    <Grid>
+    <!--<Window.CommandBindings>
+        <CommandBinding Command="local:MainWindow.GreetUserCommand" CanExecute="GreetUser_CanExecute" Executed="GreetUser_Executed"/>
+    </Window.CommandBindings>-->
+    <!--<Window.ContextMenu>
+        <ContextMenu>
+            <MenuItem Command="{Binding GreetUserCommand}"/>
+        </ContextMenu>
+    </Window.ContextMenu>-->
+    <Grid Margin="0,0,-0.4,-211.6">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="3.5*" />
             <ColumnDefinition Width="0.25*" />
@@ -47,7 +57,24 @@
                 <Grid Height="30"></Grid>
                 <TextBox Cursor="Cross" Name="Desc" FontSize="30" Margin="84,0,16.4,0" TextWrapping="Wrap" MinHeight="100" MinWidth="700" MaxHeight="200" Text="{Binding TaskDescriprion,Mode=TwoWay}"/>
                 <Button Name="SaveDiscButton" FontSize="35" Margin="30,15,30,0" Padding="2" Content="Save description"  Command="{Binding SaveDescriptionCommand}"  />
-                <Grid Height="25"/>
+                <Grid Height="15"/>
+                <StackPanel Orientation="Horizontal">
+                    <Grid Width="95"/>
+                    <Grid>
+                    <local:ColorUserControl></local:ColorUserControl>
+                </Grid>
+                    <Grid Width="25"/>
+                    <StackPanel Grid.Column="0" VerticalAlignment="Center" MouseDown="DoEvent">
+                        <Button x:Name="button1" Width="80" Height="50" MouseDown="DoEvent" Margin="10" >
+                            <Ellipse Name="Ellipse1" Width="30" Height="30" Fill="Red" MouseDown="DoEvent"  />
+                        </Button>
+                    </StackPanel>
+                <TextBlock x:Name="textBlock1" Padding="10"/>
+                    <StackPanel>
+                        <TextBox Name="txtSomeText" CommandManager.PreviewExecuted="txtSomeText_PreviewExecuted" Width="220" Height="25" Margin="10"/>
+                        <Button HorizontalAlignment="Center" Padding="10,5" Margin="10" Content="{Binding RelativeSource={RelativeSource Self}, Path=Command.Text}" Command="{Binding GreetUserCommand}"/>
+                    </StackPanel>
+                </StackPanel>
             </StackPanel>
         </Grid>
         <Grid HorizontalAlignment="Right" Grid.Column="2">

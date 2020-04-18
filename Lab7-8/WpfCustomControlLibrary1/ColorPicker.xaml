@@ -17,9 +17,9 @@
         </Grid.RowDefinitions>
         <StackPanel Grid.Column="1" Margin="0,0,-0.4,0">
             <TextBlock Padding="10"  x:Name="UserName" TextWrapping="Wrap" Text="UserControler" FontSize="18" Height="40"/>
-            <TextBlock Padding="10" Margin="0 0 0 10" x:Name="Code" Text="{Binding CodeColor, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}}}" FontSize="18" Height="40"/>
+            <TextBox Template="{DynamicResource MyTextBoxTemplateWithoutBorder}" Background="{x:Null}" IsReadOnly="True" Padding="10" Margin="0 0 0 10" x:Name="Code" Text="{Binding CodeColor, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}}}" FontSize="14" Height="40"/>
         </StackPanel>
-        <Rectangle VerticalAlignment="Top" Height="40" Grid.ColumnSpan="2" Grid.RowSpan="2" Opacity="0.4" IsEnabled="False">
+        <Rectangle VerticalAlignment="Top" Height="40" Grid.ColumnSpan="2" Grid.RowSpan="2" Opacity="0.9" IsEnabled="False">
             <Rectangle.Fill>
                 <SolidColorBrush Color="{Binding Color, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}}}"/>
             </Rectangle.Fill>

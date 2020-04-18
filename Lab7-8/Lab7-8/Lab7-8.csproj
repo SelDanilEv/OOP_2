@@ -67,6 +67,9 @@
     <Compile Include="AddNewTask.xaml.cs">
       <DependentUpon>AddNewTask.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ColorUserControl.xaml.cs">
+      <DependentUpon>ColorUserControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="DataBase.cs" />
     <Compile Include="Languages\English.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -80,8 +83,13 @@
     </Compile>
     <Compile Include="Task.cs" />
     <Compile Include="ViewModel\Comands\Command.cs" />
+    <Compile Include="MyCommands.cs" />
     <Compile Include="ViewModel\ViewModel.cs" />
     <Page Include="AddNewTask.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ColorUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

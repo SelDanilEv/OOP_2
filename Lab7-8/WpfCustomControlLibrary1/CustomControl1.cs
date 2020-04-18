@@ -48,12 +48,21 @@ namespace WpfCustomControlLibrary1
 
         public event PropertyChangedEventHandler PropertyChanged;
 
+        public static bool IsValidRed(object value)
+        {
+            return true;
+        }
 
         static ControlLibrary1()
         {
             // Регистрация свойств зависимости
             ColorProperty = DependencyProperty.Register("Color", typeof(Color), typeof(ControlLibrary1),
                 new FrameworkPropertyMetadata(Colors.Black, new PropertyChangedCallback(OnColorChanged)));
+
+            RedProperty = DependencyProperty.Register("Red", typeof(byte), typeof(ControlLibrary1),
+                new FrameworkPropertyMetadata(),
+                new ValidateValueCallback(IsValidRed));
+
             RedProperty = DependencyProperty.Register("Red", typeof(byte), typeof(ControlLibrary1),
                 new FrameworkPropertyMetadata(new PropertyChangedCallback(OnColorRGBChanged)));
             GreenProperty = DependencyProperty.Register("Green", typeof(byte), typeof(ControlLibrary1),
@@ -62,11 +71,13 @@ namespace WpfCustomControlLibrary1
                  new FrameworkPropertyMetadata(new PropertyChangedCallback(OnColorRGBChanged)));
             ColorChangedEvent = EventManager.RegisterRoutedEvent("ColorChanged", RoutingStrategy.Bubble,
         typeof(RoutedPropertyChangedEventHandler<Color>), typeof(ControlLibrary1));
+
+
         }
 
         public Color Color
         {
-            get {return (Color)this.GetValue(ColorProperty); }
+            get { return (Color)this.GetValue(ColorProperty); }
             set { this.SetValue(ColorProperty, value); CodeColor = this.Color.ToString(); }
         }
         public byte Red
