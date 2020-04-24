@@ -27,6 +27,8 @@ namespace Lab7_8.ViewModel
         public Command UndoCommand { get; private set; }
         public Command RedoCommand { get; private set; }
 
+        public event PropertyChangedEventHandler PropertyChanged;
+
         protected virtual void NotifyPropertyChanged([CallerMemberName] string propertyName = "")
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
@@ -51,7 +53,6 @@ namespace Lab7_8.ViewModel
             Display();
         }
 
-        public event PropertyChangedEventHandler PropertyChanged;
 
         public void SortByCategory()
         {

@@ -1,0 +1,166 @@
+﻿<UserControl x:Class="Lab12_14.Views.MainView"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Lab12_14.Views"
+      mc:Ignorable="d" >
+    <UserControl.Resources>
+        <Style x:Key="FocusVisual">
+            <Setter Property="Control.Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Rectangle Margin="2" SnapsToDevicePixels="true" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" StrokeThickness="1" StrokeDashArray="1 2"/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <SolidColorBrush x:Key="OptionMark.Static.Background" Color="#FFFFFFFF"/>
+        <SolidColorBrush x:Key="OptionMark.Static.Border" Color="#FF707070"/>
+        <Style x:Key="OptionMarkFocusVisual">
+            <Setter Property="Control.Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Rectangle Margin="14,0,0,0" SnapsToDevicePixels="true" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" StrokeThickness="1" StrokeDashArray="1 2"/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <SolidColorBrush x:Key="OptionMark.MouseOver.Background" Color="#FFF3F9FF"/>
+        <SolidColorBrush x:Key="OptionMark.MouseOver.Border" Color="#FF5593FF"/>
+        <SolidColorBrush x:Key="OptionMark.MouseOver.Glyph" Color="#FF212121"/>
+        <SolidColorBrush x:Key="OptionMark.Disabled.Background" Color="#FFE6E6E6"/>
+        <SolidColorBrush x:Key="OptionMark.Disabled.Border" Color="#FFBCBCBC"/>
+        <SolidColorBrush x:Key="OptionMark.Disabled.Glyph" Color="#FF707070"/>
+        <SolidColorBrush x:Key="OptionMark.Pressed.Background" Color="#FFD9ECFF"/>
+        <SolidColorBrush x:Key="OptionMark.Pressed.Border" Color="#FF3C77DD"/>
+        <SolidColorBrush x:Key="OptionMark.Pressed.Glyph" Color="#FF212121"/>
+        <SolidColorBrush x:Key="OptionMark.Static.Glyph" Color="#FF212121"/>
+        <Style x:Key="CheckBoxStyleMy" TargetType="{x:Type CheckBox}">
+            <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
+            <Setter Property="Background" Value="{StaticResource OptionMark.Static.Background}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource OptionMark.Static.Border}"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type CheckBox}">
+                        <Grid x:Name="templateRoot" Background="Transparent" SnapsToDevicePixels="True">
+                            <Border x:Name="checkBoxBorder" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="1" VerticalAlignment="{TemplateBinding VerticalContentAlignment}">
+                                <Grid x:Name="markGrid">
+                                    <Path x:Name="optionMark" Data="M39.89992,5.0188308 L18.7932,37.326523 18.08656,37.326523 0,21.305887 5.10656,14.447795 17.02,24.977764 33.33324,6.2600205E-05 39.89992,5.0188308 z" Fill="{StaticResource OptionMark.Static.Glyph}"  Margin="0" Opacity="0" Stretch="None"/>
+                                    <Rectangle x:Name="indeterminateMark" Fill="{StaticResource OptionMark.Static.Glyph}" Margin="10" Opacity="0"/>
+                                </Grid>
+                            </Border>
+                            <ContentPresenter x:Name="contentPresenter" Grid.Column="1" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="HasContent" Value="true">
+                                <Setter Property="FocusVisualStyle" Value="{StaticResource OptionMarkFocusVisual}"/>
+                                <Setter Property="Padding" Value="4,-1,0,0"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="Background" TargetName="checkBoxBorder" Value="{StaticResource OptionMark.MouseOver.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="checkBoxBorder" Value="{StaticResource OptionMark.MouseOver.Border}"/>
+                                <Setter Property="Fill" TargetName="optionMark" Value="{StaticResource OptionMark.MouseOver.Glyph}"/>
+                                <Setter Property="Fill" TargetName="indeterminateMark" Value="{StaticResource OptionMark.MouseOver.Glyph}"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Background" TargetName="checkBoxBorder" Value="{StaticResource OptionMark.Disabled.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="checkBoxBorder" Value="{StaticResource OptionMark.Disabled.Border}"/>
+                                <Setter Property="Fill" TargetName="optionMark" Value="{StaticResource OptionMark.Disabled.Glyph}"/>
+                                <Setter Property="Fill" TargetName="indeterminateMark" Value="{StaticResource OptionMark.Disabled.Glyph}"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="true">
+                                <Setter Property="Background" TargetName="checkBoxBorder" Value="{StaticResource OptionMark.Pressed.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="checkBoxBorder" Value="{StaticResource OptionMark.Pressed.Border}"/>
+                                <Setter Property="Fill" TargetName="optionMark" Value="{StaticResource OptionMark.Pressed.Glyph}"/>
+                                <Setter Property="Fill" TargetName="indeterminateMark" Value="{StaticResource OptionMark.Pressed.Glyph}"/>
+                            </Trigger>
+                            <Trigger Property="IsChecked" Value="true">
+                                <Setter Property="Opacity" TargetName="optionMark" Value="1"/>
+                                <Setter Property="Opacity" TargetName="indeterminateMark" Value="0"/>
+                            </Trigger>
+                            <Trigger Property="IsChecked" Value="{x:Null}">
+                                <Setter Property="Opacity" TargetName="optionMark" Value="0"/>
+                                <Setter Property="Opacity" TargetName="indeterminateMark" Value="1"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
+    <Grid>
+        <StackPanel>
+            <TextBlock HorizontalAlignment="Center" FontSize="30" Foreground="YellowGreen" Text="{Binding ShopName,Mode=OneWay}"></TextBlock>
+            <StackPanel Orientation="Horizontal" Margin="15 0 15 15">
+                <StackPanel Orientation="Vertical">
+                    <ListView  SelectedItem="{Binding SelectedProductShop, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"  
+                           HorizontalAlignment="Right" Margin="15"  Name="ShopStocks"
+                           MaxHeight="250" MinHeight="250"
+                           IsEnabled="{Binding IsCreate_invert,Mode=OneWay}"
+                           FontSize="25" Padding="3"
+                               MinWidth="300"
+                           ItemsSource="{Binding ShopStocksObs}">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Name}" />
+                                <GridViewColumn Header="Cost" DisplayMemberBinding="{Binding cost}" />
+                                <GridViewColumn Header="Quantity"  DisplayMemberBinding="{Binding quantity}" />
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                    <StackPanel>
+                        <TextBox FontSize="20" Text="{Binding ShopProductName}" Margin="20 5 20 0"></TextBox>
+                        <TextBox FontSize="20" Text="{Binding ShopProductCost}" Margin="20 5 20 0"></TextBox>
+                        <TextBox FontSize="20" Text="{Binding ShopProductQuan}" Margin="20 5 20 0"></TextBox>
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel  Orientation="Vertical" Margin="5" HorizontalAlignment="Stretch">
+                    <Grid Height="10"></Grid>
+                    <StackPanel Orientation="Horizontal" >
+                        <Button IsEnabled="{Binding IsCreate,Mode=OneWay}" Content="Create" Command="{Binding CreateCommand}" FontSize="25"></Button>
+                        <CheckBox Style="{DynamicResource CheckBoxStyleMy}" IsChecked="{Binding IsCreate,Mode=TwoWay}" ></CheckBox>
+                    </StackPanel>
+                    <Grid Height="20"></Grid>
+                    <Button Command="{Binding UpdateCommand}" IsEnabled="{Binding IsCreate_invert,Mode=OneWay}" Content="Update" FontSize="25"></Button>
+                    <Grid Height="20"></Grid>
+                    <Button Command="{Binding DeleteCommand}" IsEnabled="{Binding IsCreate_invert,Mode=OneWay}" Content="Delete" FontSize="25"></Button>
+                    <Grid Height="20"></Grid>
+                    <Button Command="{Binding AddCommand}" IsEnabled="{Binding IsCreate_invert,Mode=OneWay}" Content="Add" FontSize="25"></Button>
+                    <Grid Height="20"></Grid>
+                    <Button Command="{Binding RemoveCommand}" IsEnabled="{Binding IsCreate_invert,Mode=OneWay}" Content="Remove" FontSize="25"></Button>
+                    <Grid Height="20"></Grid>
+                    <Grid>
+                        <Rectangle Fill="Gray" />
+                        <TextBlock TextAlignment="Center" Foreground="YellowGreen" FontSize="25" Text="{Binding SUM}" Margin="5"/>
+                    </Grid>
+                </StackPanel>
+                <StackPanel>
+                    <ListView  SelectedItem="{Binding SelectedProductCart, Mode=TwoWay}"  
+                           HorizontalAlignment="Right" Margin="15"  Name="CartStocks"
+                           MaxHeight="250" MinHeight="250"
+                           FontSize="25" Padding="3"
+                               MinWidth="300"
+                   ItemsSource="{Binding CartStocksObs,Mode=OneWay}"
+                   >
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn  Header="Name" DisplayMemberBinding="{Binding Name}" />
+                                <GridViewColumn Header="Cost" DisplayMemberBinding="{Binding cost}" />
+                                <GridViewColumn Header="Quantity"  DisplayMemberBinding="{Binding quantity}" />
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                    <StackPanel>
+                        <TextBox IsReadOnly="True" FontSize="20" Text="{Binding CartProductName,Mode=OneWay}" Margin="20 5 20 0"></TextBox>
+                        <TextBox IsReadOnly="True" FontSize="20" Text="{Binding CartProductCost,Mode=OneWay}" Margin="20 5 20 0"></TextBox>
+                        <TextBox IsReadOnly="True" FontSize="20" Text="{Binding CartProductQuan,Mode=OneWay}" Margin="20 5 20 0"></TextBox>
+                    </StackPanel>
+                </StackPanel>
+                <TextBlock Text="{Binding Sum}" Foreground="Gold"></TextBlock>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</UserControl>
