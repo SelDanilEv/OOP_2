@@ -32,14 +32,13 @@ namespace Lab7_8
 
         public MainWindow()
         {
-            DataContext = this;
             InitializeComponent();
             ViewModel.ViewModel viewModel = new ViewModel.ViewModel(Tasks);
             DataContext = viewModel;
             //DataContext = this;
             ClickEvent = EventManager.RegisterRoutedEvent(
                 "Control_MouseDown",
-                RoutingStrategy.Bubble,
+                RoutingStrategy.Direct,
                 typeof(RoutedEventHandler),
                 typeof(ButtonBase));
         }
@@ -117,7 +116,7 @@ namespace Lab7_8
 
         public void DoEvent(object sender, MouseButtonEventArgs e)
         {
-            ; MessageBox.Show(ClickEvent.RoutingStrategy.ToString());
+            MessageBox.Show(ClickEvent.RoutingStrategy.ToString());
             Control_MouseDown(sender, e);
         }
 

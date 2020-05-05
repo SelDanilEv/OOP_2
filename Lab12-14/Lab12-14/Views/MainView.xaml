@@ -101,7 +101,7 @@
                            MaxHeight="250" MinHeight="250"
                            IsEnabled="{Binding IsCreate_invert,Mode=OneWay}"
                            FontSize="25" Padding="3"
-                               MinWidth="300"
+                           MinWidth="300"
                            ItemsSource="{Binding ShopStocksObs}">
                         <ListView.View>
                             <GridView>

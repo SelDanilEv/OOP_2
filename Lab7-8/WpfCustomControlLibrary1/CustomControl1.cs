@@ -59,11 +59,11 @@ namespace WpfCustomControlLibrary1
             ColorProperty = DependencyProperty.Register("Color", typeof(Color), typeof(ControlLibrary1),
                 new FrameworkPropertyMetadata(Colors.Black, new PropertyChangedCallback(OnColorChanged)));
 
-            RedProperty = DependencyProperty.Register("Red", typeof(byte), typeof(ControlLibrary1),
+            RedProperty = DependencyProperty.Register("Red1", typeof(byte), typeof(ControlLibrary1),
                 new FrameworkPropertyMetadata(),
                 new ValidateValueCallback(IsValidRed));
 
-            RedProperty = DependencyProperty.Register("Red", typeof(byte), typeof(ControlLibrary1),
+            RedProperty = DependencyProperty.Register("Red1", typeof(byte), typeof(ControlLibrary1),
                 new FrameworkPropertyMetadata(new PropertyChangedCallback(OnColorRGBChanged)));
             GreenProperty = DependencyProperty.Register("Green", typeof(byte), typeof(ControlLibrary1),
                 new FrameworkPropertyMetadata(new PropertyChangedCallback(OnColorRGBChanged)));
@@ -80,7 +80,7 @@ namespace WpfCustomControlLibrary1
             get { return (Color)this.GetValue(ColorProperty); }
             set { this.SetValue(ColorProperty, value); CodeColor = this.Color.ToString(); }
         }
-        public byte Red
+        public byte Red1
         {
             get => (byte)this.GetValue(RedProperty);
             set => this.SetValue(RedProperty, value);
@@ -121,7 +121,7 @@ namespace WpfCustomControlLibrary1
         {
             var newColor = (Color)e.NewValue;
             var ControlLibrary1 = (ControlLibrary1)sender;
-            ControlLibrary1.Red = newColor.R;
+            ControlLibrary1.Red1 = newColor.R;
             ControlLibrary1.Green = newColor.G;
             ControlLibrary1.Blue = newColor.B;
         }

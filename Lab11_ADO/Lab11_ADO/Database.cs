@@ -12,6 +12,7 @@ namespace Lab11_ADO
     public static class Database
     {
         //private static string connectionString = @"Data Source=DEFENDER-SD\MSSQLSERVERSEC;Initial Catalog=Space;Integrated Security=True";
+
         private static string connectionStringApp = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
         static SqlConnection connection = new SqlConnection(connectionStringApp);
         static SqlCommand command;
@@ -29,7 +30,7 @@ namespace Lab11_ADO
                 // выполняем две отдельные команды
                 command.CommandText = "insert into Planet(Name,Radius,Temperature,IsLife,IsAtmosphere,Satellites) values('Earth2', 6371, 287.2, 'Y', 'Y', 'Moon')";
                 command.ExecuteNonQuery();
-                command.CommandText = "insert into Planet(Name,Radius,Temperature,IsLife,IsAtmosphere,Satellites) values('Earth2', 6371, 287.2, 'Y', 'Y', 'Moon')";
+                command.CommandText = "insert into Planet(Name,Radius,Temperature,IsLife,IsAtmosphere,Satellites) values('Earth3', 6371, 287.2, 'Y', 'Y', 'Moon')";
                 command.ExecuteNonQuery();
 
                 // подтверждаем транзакцию
@@ -45,10 +46,7 @@ namespace Lab11_ADO
 
         public static void OpenConnection(TextBlock block)
         {
-            if (connection.State != System.Data.ConnectionState.Open)
-            {
-                connection.Open();
-            }
+            OpenConnection();
             textBlock = block;
         }
 

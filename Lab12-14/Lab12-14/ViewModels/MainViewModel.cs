@@ -320,7 +320,6 @@ namespace Lab12_14.ViewModels
                 {
                     CreateStockName = value;
                     NotifyPropertyChanged();
-
                 }
             }
         }

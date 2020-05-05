@@ -88,6 +88,15 @@ namespace Lab7_8.Languages {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Описание.
+        /// </summary>
+        internal static string Description {
+            get {
+                return ResourceManager.GetString("Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Изменить.
         /// </summary>
         internal static string Edit {
@@ -102,6 +111,24 @@ namespace Lab7_8.Languages {
         internal static string Header {
             get {
                 return ResourceManager.GetString("Header", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Русский.
+        /// </summary>
+        internal static string Language {
+            get {
+                return ResourceManager.GetString("Language", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Сортировать по.
+        /// </summary>
+        internal static string SortBy {
+            get {
+                return ResourceManager.GetString("SortBy", resourceCulture);
             }
         }
     }

@@ -22,14 +22,14 @@ namespace Lab7_8.Languages {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class English {
+    internal class Resource1 {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal English() {
+        internal Resource1() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace Lab7_8.Languages {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Lab7_8.Languages.English", typeof(English).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Lab7_8.Languages.Resource1", typeof(Resource1).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -57,78 +57,6 @@ namespace Lab7_8.Languages {
             }
             set {
                 resourceCulture = value;
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на Add.
-        /// </summary>
-        internal static string Add {
-            get {
-                return ResourceManager.GetString("Add", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на Change style.
-        /// </summary>
-        internal static string ChangeStyle {
-            get {
-                return ResourceManager.GetString("ChangeStyle", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на Delete.
-        /// </summary>
-        internal static string Delete {
-            get {
-                return ResourceManager.GetString("Delete", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на Description.
-        /// </summary>
-        internal static string Description {
-            get {
-                return ResourceManager.GetString("Description", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на Edit.
-        /// </summary>
-        internal static string Edit {
-            get {
-                return ResourceManager.GetString("Edit", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на Tasks.
-        /// </summary>
-        internal static string Header {
-            get {
-                return ResourceManager.GetString("Header", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на English.
-        /// </summary>
-        internal static string Language {
-            get {
-                return ResourceManager.GetString("Language", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Ищет локализованную строку, похожую на Sort by.
-        /// </summary>
-        internal static string SortBy {
-            get {
-                return ResourceManager.GetString("SortBy", resourceCulture);
             }
         }
     }

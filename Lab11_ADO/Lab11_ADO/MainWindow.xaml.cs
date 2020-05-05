@@ -20,9 +20,6 @@ using System.Threading;
 
 namespace Lab11_ADO
 {
-    /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window, INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
@@ -50,9 +47,9 @@ namespace Lab11_ADO
                 _sp = value;
                 if (_sp != null)
                 {
-                    MessageBox.Show(_sp.Name); SatelliteList = SatelliteList;
+                    NotifyPropertyChanged("SatelliteList");SatelliteList = SatelliteList;
                     if (Database.GetDescriptions(true, _sp.Name).Count != 0)
-                        txt.Text = Database.GetDescriptions(true, _sp.Name)[0].Descriprion;
+                        txt.Text = Database.GetDescriptions(true, _sp.Name).Last().Descriprion;
                 }
                 NotifyPropertyChanged();
             }

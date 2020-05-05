@@ -117,28 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Add" xml:space="preserve">
-    <value>Добавить</value>
+  <data name="Target" xml:space="preserve">
+    <value>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</value>
   </data>
-  <data name="ChangeStyle" xml:space="preserve">
-    <value>Сменить стиль</value>
-  </data>
-  <data name="Delete" xml:space="preserve">
-    <value>Удалить</value>
-  </data>
-  <data name="Description" xml:space="preserve">
-    <value>Описание</value>
-  </data>
-  <data name="Edit" xml:space="preserve">
-    <value>Изменить</value>
-  </data>
-  <data name="Header" xml:space="preserve">
-    <value>Задания</value>
-  </data>
-  <data name="Language" xml:space="preserve">
-    <value>Русский</value>
-  </data>
-  <data name="SortBy" xml:space="preserve">
-    <value>Сортировать по</value>
+  <data name="DefaultSchema" xml:space="preserve">
+    <value>dbo</value>
   </data>
 </root>

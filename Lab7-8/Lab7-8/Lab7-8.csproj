@@ -76,6 +76,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>English.resx</DependentUpon>
     </Compile>
+    <Compile Include="Languages\Resource1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resource1.resx</DependentUpon>
+    </Compile>
     <Compile Include="Languages\Russian.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -132,6 +137,10 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>English.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Languages\Resource1.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource1.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Languages\Russian.resx">
       <Generator>ResXFileCodeGenerator</Generator>

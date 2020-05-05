@@ -35,7 +35,7 @@
                 <ColumnDefinition Width="auto"></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <Slider Name="sliderRed" Minimum="0" Maximum="255"
-             Value="{Binding Path=Red, RelativeSource={RelativeSource FindAncestor,AncestorType={x:Type UserControl}}}">
+             Value="{Binding Path=Red1, RelativeSource={RelativeSource FindAncestor,AncestorType={x:Type UserControl}}}">
             </Slider>
             <Slider Grid.Row="1" Name="sliderGreen" Minimum="0" Maximum="255"
    Value="{Binding Path=Green, RelativeSource={RelativeSource FindAncestor,AncestorType={x:Type UserControl}}}">

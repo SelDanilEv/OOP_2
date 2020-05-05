@@ -69,6 +69,11 @@
     <Compile Include="DataBase\DataBase.cs" />
     <Compile Include="DataBase\Repository.cs" />
     <Compile Include="DataBase\UnitOfWork.cs" />
+    <Compile Include="Migrations\202004211626464_InitialCreate.cs" />
+    <Compile Include="Migrations\202004211626464_InitialCreate.designer.cs">
+      <DependentUpon>202004211626464_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="ShopContext.cs" />
     <Compile Include="ViewModels\ViewModelBase.cs" />
@@ -110,6 +115,9 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <EmbeddedResource Include="Migrations\202004211626464_InitialCreate.resx">
+      <DependentUpon>202004211626464_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
