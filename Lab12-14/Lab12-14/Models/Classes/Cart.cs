@@ -20,6 +20,7 @@ namespace Lab12_14.Classes
             this.products = products;
         }
 
+        
         public int Id { get; set; }
         public Shop shop { get; set; }
         public string CartName { get; set; }

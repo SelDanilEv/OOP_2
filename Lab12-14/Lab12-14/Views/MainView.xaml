@@ -91,6 +91,7 @@
             </Setter>
         </Style>
     </UserControl.Resources>
+    
     <Grid>
         <StackPanel>
             <TextBlock HorizontalAlignment="Center" FontSize="30" Foreground="YellowGreen" Text="{Binding ShopName,Mode=OneWay}"></TextBlock>

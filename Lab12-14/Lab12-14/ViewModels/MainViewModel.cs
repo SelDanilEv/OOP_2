@@ -84,10 +84,8 @@ namespace Lab12_14.ViewModels
         }
 
 
-
         public void CreateNewProduct()
         {
-            ///TODO       same names condition 
             string ProdName;
             double ProdCost;
             int ProdQuan;

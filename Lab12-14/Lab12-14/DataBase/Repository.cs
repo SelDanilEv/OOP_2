@@ -39,6 +39,7 @@ namespace Lab12_14.DataBase
             db.Stocks.Load();
             return db.Carts.Find(id);
         }
+
         public Cart Get(string CartName)
         {
             return db.Carts.Local.First(x => x.CartName == CartName);

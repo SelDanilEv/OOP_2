@@ -47,6 +47,7 @@
             </StackPanel>
             <TextBox Name="desc" FontSize="35" Margin="40"></TextBox>
             <Button Content="ADD" HorizontalContentAlignment="Center" Click="Button_Click_2"></Button>
+            <Calendar Margin="0,0,0.4,0"/>
             <TextBlock Name="txt"  FontSize="35" Margin="40"></TextBlock>
         </StackPanel>
     </Grid>
